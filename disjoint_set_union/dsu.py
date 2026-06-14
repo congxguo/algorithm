@@ -35,3 +35,10 @@ class dsu:
         self.parent[x] = root
 
         return root
+
+    
+dsu = dsu(4)
+dsu.parent = [0, 0, 1, 2]
+dsu.rank = [3, 2, 1, 0]
+dsu.find(3)
+print(f'parent={dsu.parent}, rank={dsu.rank}')
