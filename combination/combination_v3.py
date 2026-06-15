@@ -12,7 +12,8 @@ def combine(nums, k):
         # 从 start 开始继续选 - note this is a loop
         for i in range(start, n):
             path.append(nums[i])
-            backtrack(i + 1)
+            # here is i + 1
+            backtrack(i + 1)        
             path.pop()
 
     backtrack(0)

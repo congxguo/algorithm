@@ -9,6 +9,7 @@ def permutation(nums):
         
         for u in range(start, n):
             nums[start], nums[u] = nums[u], nums[start]
+            # here is start + 1
             backtrace(start + 1)
             nums[start], nums[u] = nums[u], nums[start]
 
