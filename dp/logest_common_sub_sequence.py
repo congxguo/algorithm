@@ -57,3 +57,7 @@ print(f'######################################################')
 
 print(solution.longestCommonSubsequence('abc', 'def'))
 print(f'######################################################')
+
+
+print(solution.longestCommonSubsequence(None, 'def'))
+print(f'######################################################')
