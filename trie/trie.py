@@ -13,6 +13,8 @@ class TrieTreeNode:
     def __init__(self):
         self.children = {}
         self.is_end = False
+        
+        # for extended use cases
         self.count = 0
         self.key = None
         
@@ -45,14 +47,15 @@ class TrieTree:
     def insert(self, str):
         cur_node = self.root
         for ch in str:
-            # print(f'ch={ch}')
             if ch not in cur_node.children:
                 new_node = TrieTreeNode()
                 cur_node.children[ch] = new_node
                 cur_node = new_node
+                # extended use case
                 cur_node.key = ch
             else:
                 cur_node = cur_node.children[ch]
+                # extended use case
                 cur_node.count += 1
         cur_node.is_end = True
             
