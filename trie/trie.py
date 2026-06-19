@@ -13,6 +13,8 @@ class TrieTreeNode:
     def __init__(self):
         self.children = {}
         self.is_end = False
+        self.count = 0
+        self.key = None
         
 
 class TrieTree:
@@ -48,21 +50,28 @@ class TrieTree:
                 new_node = TrieTreeNode()
                 cur_node.children[ch] = new_node
                 cur_node = new_node
+                cur_node.key = ch
             else:
                 cur_node = cur_node.children[ch]
+                cur_node.count += 1
         cur_node.is_end = True
             
     def print_trie(self):
         self.traverse(self.root, [])
         
+    
+    def print_nodes(self, path):
+        for node in path:
+            print(f"{node.key}:{node.count}", end="->")
 
     def traverse(self, node, path):
         if node.is_end:
-            print(f'path={path}')
+            self.print_nodes(path)
+            print("")
             
         if node.children:
             for cur_key in node.children:
-                path.append(cur_key)
+                path.append(node.children[cur_key])
                 self.traverse(node.children[cur_key], path)
                 path.pop()
                 
