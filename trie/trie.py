@@ -16,7 +16,7 @@ class TrieTreeNode:
         self.count = 0
         self.key = None
         
-
+        
 class TrieTree:
     def __init__(self):
         self.root = TrieTreeNode()
@@ -56,6 +56,7 @@ class TrieTree:
                 cur_node.count += 1
         cur_node.is_end = True
             
+            
     def print_trie(self):
         self.traverse(self.root, [])
         
@@ -63,6 +64,7 @@ class TrieTree:
     def print_nodes(self, path):
         for node in path:
             print(f"{node.key}:{node.count}", end="->")
+
 
     def traverse(self, node, path):
         if node.is_end:
