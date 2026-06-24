@@ -5,6 +5,7 @@ def combine(nums, k):
 
     def backtrack(start):
         # 如果已经选够 k 个，加入答案
+        # reach the length
         if len(path) == k:
             ans.append(path[:])
             return

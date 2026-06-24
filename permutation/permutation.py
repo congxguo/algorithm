@@ -3,6 +3,7 @@ def permutation(nums):
     n = len(nums)
     
     def backtrace(start):
+        # reach the end
         if start == n:
             ans.append(nums[:])
             return
