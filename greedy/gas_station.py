@@ -6,9 +6,13 @@ def start_station(gas, cost):
     station_len = len(gas)
     start = station_len - 1
 
+
+    # the loop structure could not be known in advance which is depends on the real situtaion, that's why we use while to stop the loop based on specific value
     while start >= 0:
         print(f'start_station={start}')
         remaining_gas = 0
+        # treat a specifc station as start, to check if it can reach the final state
+        # if not, we need to move backward one station, for start with the next station does not work either
         for i in range(0, station_len):
             cur_station = (start + i) % station_len
             cur_station_gas = gas[cur_station]
