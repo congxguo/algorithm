@@ -2,6 +2,7 @@ from collections import deque
 
 class AdjGraph:
     def __init__(self):
+        # entrypoint: dict/hashmap
         self.graph = dict()
     
 
@@ -25,7 +26,7 @@ class AdjGraph:
         if v not in self.graph.keys():
             self.graph[v] = []
     
-
+    # this is the version that cannot traverse all vertices if the graph is not connected
     def bfs(self):
         # 1. select start vertex, let's use the first one in list
         # 2. add it to a queue
