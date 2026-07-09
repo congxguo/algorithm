@@ -1,5 +1,6 @@
 class dsu:
     def __init__(self, n):
+        # States: 2 lists, one for parent finding, the other for parent decision during merging.
         self.parent = list(range(n))
         self.rank = [0] * n
         
@@ -28,12 +29,16 @@ class dsu:
     def find(self, x):
         print(f'x={x}, parent={self.parent}, rank={self.rank}')
 
+        # part1: when to stop
         if self.parent[x] == x:
             return x
         
+        # part2: recursive
         root = self.find(self.parent[x])
+        
+        # part3: how to use the recursive result
+        # adjust to reduce the depth of the union
         self.parent[x] = root
-
         return root
 
     
