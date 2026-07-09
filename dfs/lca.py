@@ -44,7 +44,6 @@ def lca(root, p, q):
     # note the returned value is not necessary p or q, it could be the lca of them
     if left and right:
         return root
-    
     return left if left else right
 
 
