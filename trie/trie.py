@@ -29,6 +29,7 @@ class TrieTree:
     # use the structure as index for specific searching
     def search(self, str):
         cur_node = self.root
+        # push one node down by each ch in the str if matching, else just return False
         for ch in str:
             if ch not in cur_node.children:
                 return False
