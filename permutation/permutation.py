@@ -8,6 +8,7 @@ def permutation(nums):
             ans.append(nums[:])
             return
         
+        # choose who is the start of the permutation
         for u in range(start, n):
             nums[start], nums[u] = nums[u], nums[start]
             # here is start + 1
