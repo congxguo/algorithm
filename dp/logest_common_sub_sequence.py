@@ -8,6 +8,7 @@ class Solution(object):
         :rtype: int
         """
 
+        # guarding statements
         if not text1:
             return 0
         if not text2:
@@ -16,9 +17,12 @@ class Solution(object):
         print(f'######################################################')
         print(f'input: text1={text1}, text2={text2}')
 
+        # initial state
         dp = [[-1 for _ in range(0, len(text2))] for _ in range(0, len(text1))]
         print(dp)
         max_len = 0
+        
+        # state transition logic
         for i in range(0, len(text1)):
             for j in range(0, len(text2)):
                 print(f'i={i}, j={j}')
@@ -44,7 +48,8 @@ class Solution(object):
                         dp[i][j] = max(dp[i-1][j], dp[i][j-1])
                     
                 max_len = max(max_len, dp[i][j])
-                    
+             
+        # how to use the transition result
         return max_len
         
         
