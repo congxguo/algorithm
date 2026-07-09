@@ -29,16 +29,18 @@ def build_tree(level):
 
 
 def lca(root, p, q):
+    # part1: when to stop
     if root is None or root == p or root == q:
         return root
     
-    
+    # part2: recursive call
     # for a node, given we find p before q
     # if q is in the subtree of p, we will definitely get a None value in the other travserse branch
     # if not, we will get 2 not None value
     left = lca(root.left, p, q)
     right = lca(root.right, p, q)
     
+    # part3: how to resolve the result of recursive
     # note the returned value is not necessary p or q, it could be the lca of them
     if left and right:
         return root
