@@ -21,11 +21,14 @@ class Node():
 
 class LRU():
     def __init__(self, capacity):
+        # control when to replace (memory management)
         self.capacity = capacity
         self.used = 0
         
+        # index for quick search
         self.cache = dict()
         
+        # double linked list
         self.head = Node("head", -1)
         self.tail = Node("tail", -1)
         self.head.prev = None
@@ -74,6 +77,7 @@ class LRU():
         self.capacity -= 1
         
         
+    # separate the ops on the list
     def remove_oldest_from_list(self):
         oldest_node = self.tail.prev
         self.remove_from_list(oldest_node)
@@ -90,6 +94,7 @@ class LRU():
         
         node.prev = self.head
         self.head.next = node
+    
     
     def debug(self):
         node = self.head

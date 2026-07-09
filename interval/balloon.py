@@ -19,6 +19,7 @@ def dindMinArrowShot(points):
     if not points:
         return 0
 
+    # frequently used utility function
     points.sort(key=lambda x: x[0])
 
     shots = 0
