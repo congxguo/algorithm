@@ -26,6 +26,7 @@ class TrieTree:
         self.root = TrieTreeNode()
     
     
+    # use the structure as index for specific searching
     def search(self, str):
         cur_node = self.root
         for ch in str:
@@ -46,6 +47,7 @@ class TrieTree:
         return True
     
     
+    # build structure or index gradually
     def insert(self, str):
         cur_node = self.root
         for ch in str:
