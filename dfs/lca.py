@@ -33,9 +33,13 @@ def lca(root, p, q):
         return root
     
     
+    # for a node, given we find p before q
+    # if q is in the subtree of p, we will definitely get a None value in the other travserse branch
+    # if not, we will get 2 not None value
     left = lca(root.left, p, q)
     right = lca(root.right, p, q)
     
+    # note the returned value is not necessary p or q, it could be the lca of them
     if left and right:
         return root
     
