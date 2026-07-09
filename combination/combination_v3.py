@@ -10,7 +10,7 @@ def combine(nums, k):
             ans.append(path[:])
             return
 
-        # 从 start 开始继续选 - note this is a loop
+        # choose who is to pick up to add to path
         for i in range(start, n):
             path.append(nums[i])
             # here is i + 1
