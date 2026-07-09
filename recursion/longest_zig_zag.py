@@ -13,9 +13,11 @@ def longest_zigzag(root):
         if not node:
             return -1, -1
         
+        # the longest zigzag start from node.left for both directions
         left_left, left_right = dfs(node.left)
         right_left, right_right = dfs(node.right)
         
+        # confirm the longest zigzag path for the current node based on the left and right child nodes zigzag result
         left_len = left_right + 1
         right_len = right_left + 1
         

@@ -11,7 +11,9 @@ example: ax
 
 class TrieTreeNode:
     def __init__(self):
+        # the keys of child nodes are stored in the parent node
         self.children = {}
+        # used for full match
         self.is_end = False
         
         # for extended use cases
@@ -56,6 +58,7 @@ class TrieTree:
             else:
                 cur_node = cur_node.children[ch]
                 # extended use case
+
                 cur_node.count += 1
         cur_node.is_end = True
             
